@@ -1,0 +1,22 @@
+HideActions
+===========
+
+ActionController::HideActions adds the ability to prevent public methods on a controller
+to be called as actions.
+
+
+Example
+=======
+
+  class NonEmptyController < ActionController::Base
+    def public_action
+      render :nothing => true
+    end
+
+    hide_action :hidden_action
+    def hidden_action
+    end
+  end
+
+
+Copyright (c) 2010 David Heinemeier Hansson, released under the MIT license
